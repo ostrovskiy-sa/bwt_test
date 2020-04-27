@@ -10,7 +10,7 @@ class Db
         $user = 'serge';
         $pass = 'pass777';
 
-        $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-        return $db;
+        $conn = mysqli_connect($host, $user, $pass, $dbname);
+        return $conn;
     }
 }

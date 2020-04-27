@@ -1,12 +1,13 @@
 <?php
 
 
+
 class Controller
 {
 
 
     public function actionRegistration(){
-        echo 'здесь будет регитрация';
+        require_once (ROOT.'/views/index.php');
     }
 
     public function actionWeather(){
@@ -20,4 +21,5 @@ class Controller
     public function actionShowFeedbacks(){
         echo 'все фидбеки';
     }
+    
 }
