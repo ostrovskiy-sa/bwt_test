@@ -10,7 +10,7 @@ class Db
         $user = 'serge';
         $pass = 'pass777';
 
-        $conn = mysqli_connect($host, $user, $pass, $dbname);
-        return $conn;
+        $mysqli = new mysqli($host, $user, $pass, $dbname);
+        return $mysqli;
     }
 }

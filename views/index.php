@@ -61,13 +61,6 @@
 
     }
 </script>
-<?php
-require ROOT.'/models/User.php';
-$result = User::addUser();
-
-
-?>
-
     <h2 align="center">Form registration</h2>
     <div class="container">
     <div class="row">

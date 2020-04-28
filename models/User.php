@@ -33,10 +33,10 @@ class User
                 $birthday = $_POST['birthday'];
             }
 
-            $connect = Db::getConnect();
+            $mysqli = Db::getConnect();
             $sql = "INSERT INTO users (first_name, last_name, email, gender, date_of_birth) VALUES ('$name', '$surname', '$email', '$gender', '$birthday')";
-            $connect->multi_query($sql);
-            $connect->close();
+            $result = $mysqli->query($sql);
+            $mysqli->close();
         }
            
     }

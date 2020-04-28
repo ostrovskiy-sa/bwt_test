@@ -47,10 +47,7 @@
 
     }
 </script>
-<?php
-require ROOT.'/models/Feed.php';
-$result = Feed::addComment();
-?>
+
 
     <h2 align="center">Add comment</h2>
     <div class="container">
@@ -66,7 +63,7 @@ $result = Feed::addComment();
             <input type="text" name="email" class="form-control" placeholder="example@gmail.com *" required><label style="color:red;" id="email"></label>
         </div>
         <div class="form-group">
-            <input type="text" name="comment" class="form-control" placeholder="Your comment *" required><label style="color:red;" id="email"></label>
+            <input type="text" name="comment" class="form-control" placeholder="Your comment *" required minlength="10"><label style="color:red;" id="email"></label>
         </div>
         
         <button type="submit" class="btn btn-primary">Submit</button>

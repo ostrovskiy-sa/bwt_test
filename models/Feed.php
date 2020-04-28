@@ -23,16 +23,33 @@ class Feed
                 return false;
             }
             if (strlen($_POST['comment'])>=10){
-                $name = $_POST['comment'];
+                $comment = $_POST['comment'];
             }
             else{
                 return false;
             }
-            $connect = Db::getConnect();
+            $mysqli = Db::getConnect();
             $sql = "INSERT INTO feedback (first_name, email, comment) VALUE ('$name', '$email', '$comment');";
-            $connect->multi_query($sql);
-            $connect->close();
+            $result = $mysqli->query($sql);
+            $mysqli->close();
         }
            
+    }
+
+    public static function commentsList(){
+        $commentsList = array();
+        $mysqli = Db::getConnect();
+        $sql = 'SELECT * FROM feedback';
+        $result = $mysqli->query($sql);
+
+        $i = 0;
+        while($row= $result->fetch_assoc()){
+            $commentsList[$i]['name'] = $row['first_name'];
+            $commentsList[$i]['email'] = $row['email'];
+            $commentsList[$i]['comment'] = $row['comment'];
+            $i++;
+        }
+        $mysqli->close();
+        return $commentsList;
     }
 }
