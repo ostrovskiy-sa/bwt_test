@@ -14,7 +14,7 @@ class Controller
     }
 
     public function actionAddFeedback(){
-        echo 'форма фидбека';
+        require_once (ROOT.'/views/feedform.php');
     }
 
     public function actionShowFeedbacks(){

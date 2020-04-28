@@ -7,7 +7,7 @@ class User
         $name = $surname = $email = $gender = $birthday = '';
         
         if (isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['email'])) {
-            $reg = "/^[a-z]+$/";
+            $reg = "/^[a-zA-Z]+$/";
             if (strlen($_POST['name'])>=2 && preg_match($reg, $_POST['name'])){
                 $name = $_POST['name'];
             }
@@ -33,10 +33,10 @@ class User
                 $birthday = $_POST['birthday'];
             }
 
-            $query = "INSERT INTO users (first_name, last_name, email, gender, date_of_birth) VALUES ('$name', '$surname', '$email', '$gender', '$birthday')";
             $connect = Db::getConnect();
-            $result = mysqli_query($connect, $query);
-            mysqli_close($connect);
+            $sql = "INSERT INTO users (first_name, last_name, email, gender, date_of_birth) VALUES ('$name', '$surname', '$email', '$gender', '$birthday')";
+            $connect->multi_query($sql);
+            $connect->close();
         }
            
     }
