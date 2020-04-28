@@ -5,10 +5,27 @@ class User
 
     public static function addUser(){
         $name = $surname = $email = $gender = $birthday = '';
+        
         if (isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['email'])) {
-            $name = $_POST['name'];
-            $surname = $_POST['surname'];
-            $email = $_POST['email'];
+            $reg = "/^[a-z]+$/";
+            if (strlen($_POST['name'])>=2 && preg_match($reg, $_POST['name'])){
+                $name = $_POST['name'];
+            }
+            else{
+                return false;
+            }
+            if (strlen($_POST['surname'])>=2 && preg_match($reg, $_POST['surname'])){
+                $surname = $_POST['surname'];
+            }
+            else{
+                return false;
+            }
+            if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+                $email = $_POST['email'];
+            }
+            else{
+                return false;
+            }
             if (isset($_POST['gender'])) {
                 $gender = $_POST['gender'];
             }
@@ -20,6 +37,7 @@ class User
             $connect = Db::getConnect();
             $result = mysqli_query($connect, $query);
             mysqli_close($connect);
-        }    
+        }
+           
     }
 }
