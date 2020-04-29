@@ -85,7 +85,8 @@
             <input type="radio" name="gender" value="Female"/>Female
             <input type="radio" name="gender" value="Male"/>Male
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Registration</button>
+        <a href='/login' class="btn btn-primary">Login</a>
         </form>
         </div>
         <div class="col-sm">

@@ -49,38 +49,26 @@
 </script>
 
 
-    <h2 align="center">Add comment</h2>
-    <div class="container">
-    <div class="row">
-        <div class="col-sm">
-        </div>
-        <div class="col-sm-5">
-        <form name="form" method="POST" onsubmit="return validateForm()">
-        <div class="form-group">
-            <input type="text" name="name" class="form-control" placeholder="Name *" required minlength="2"><label style="color:red;" id="name"></label>
-        </div>
-        <div class="form-group">
-            <input type="text" name="email" class="form-control" placeholder="example@gmail.com *" required><label style="color:red;" id="email"></label>
-        </div>
-        <div class="form-group">
-            <input type="text" name="comment" class="form-control" placeholder="Your comment *" required minlength="10"><label style="color:red;" id="email"></label>
-        </div>
-        <div class="form-group">
-            <span>Are you robot</span>
-            <select size="1" name="norobot">
-                <option>---------------</option>
-                <option>Yes</option>
-                <option>Yaaa</option>
-                <option>No</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Add comment</button>
-        </form>
-        </div>
-        <div class="col-sm">
-        </div>
+<h2 align="center">Login</h2>
+<div class="container">
+<div class="row">
+    <div class="col-sm">
     </div>
+    <div class="col-sm-5">
+    <form name="form" method="POST" onsubmit="return validateForm()">
+    <div class="form-group">
+        <input type="text" name="name" class="form-control" placeholder="Name *" required minlength="2"><label style="color:red;" id="name"></label>
     </div>
-
+    <div class="form-group">
+        <input type="text" name="email" class="form-control" placeholder="example@gmail.com *" required><label style="color:red;" id="email"></label>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+    <a href="/" class="btn btn-primary">Registration</a>
+    </form>
+    </div>
+    <div class="col-sm">
+    </div>
+</div>
+</div>
 </body>
 </html>

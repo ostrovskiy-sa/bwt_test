@@ -40,4 +40,23 @@ class User
         }
            
     }
+
+    public static function loginUser(){
+        session_start();
+        $_SESSION['login'] = false;
+        $conn = Db::getConnect();
+        if(isset($_POST['name']) && isset($_POST['email'])){
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $sql = "SELECT * FROM users WHERE first_name='$name' and email='$email'";
+            $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+            $count = mysqli_num_rows($result);
+
+            if($count == 1){
+                $_SESSION['username'] = $name;
+                $_SESSION['login'] = true;
+            }
+
+        }
+    }
 }

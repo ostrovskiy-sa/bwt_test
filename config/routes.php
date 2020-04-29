@@ -5,5 +5,7 @@ return array(
     'weather' => 'Weather',
     'feedbackform' => 'AddFeedback',
     'feedback' => 'ShowFeedbacks',
+    'login' => 'Login',
+    'logout' => 'Logout',
     
 );

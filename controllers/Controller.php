@@ -14,7 +14,7 @@ class Controller
     }
 
     public function actionWeather(){
-        echo 'показываем погодку';
+        require_once (ROOT.'/views/weather.php');
     }
 
     public function actionAddFeedback(){
@@ -29,6 +29,19 @@ class Controller
         require_once (ROOT.'/views/comments.php');
         return true;
 
+    }
+    
+    public function actionLogin(){
+        require_once (ROOT.'/views/login.php');
+        User::loginUser();
+        if($_SESSION['login']== true){
+            header('Location: /weather');
+        }
+        return true;
+    }
+    public function actionLogout(){
+        require_once (ROOT.'/views/logout.php');
+        return true;
     }
     
 }
