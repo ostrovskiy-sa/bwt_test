@@ -11,10 +11,42 @@
     <title>GetWeather</title>
   </head>
 <body>
-    <a href='/logout'>Logout</a>
-    <a href='/feedbackform'>Add comment</a>
-    <a href='/feedback'>See comments</a>
-    <h2>ПОГОДА ЗАПОРОЖЬЕ</h2>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/logout">Log out <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/feedbackform">Add comment</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/feedback">All comments</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+    
+<?php
+
+require 'vendor/autoload.php';
+ 
+use GuzzleHttp\Client;
+ 
+
+$client = new Client([
+        'headers' => ['User-Agent' => 'MyReader']
+     ]);
+$response = $client->request('GET', 'http://www.gismeteo.ua/city/daily/5093/');
+echo $response->getBody();
+
+
+?>
     
 
         

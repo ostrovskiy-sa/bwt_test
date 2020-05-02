@@ -46,7 +46,7 @@
             }
 
         function isName(name){
-            var nameReg = /^[a-zA-Z]+$/;
+            var nameReg = /^[a-zA-Z-]+$/;
             return nameReg.test(name);
         }
         function isSurname(surname){
@@ -61,38 +61,53 @@
 
     }
 </script>
-    <h2 align="center">Form registration</h2>
-    <div class="container">
-    <div class="row">
-        <div class="col-sm">
-        </div>
-        <div class="col-sm-5">
-        <form name="form" method="POST" onsubmit="return validateForm()">
-        <div class="form-group">
-            <input type="text" name="name" class="form-control" placeholder="Name *" required minlength="2"><label style="color:red;" id="name"></label>
-        </div>
-        <div class="form-group">
-            <input type="text" name="surname" class="form-control" placeholder="Surname *" required minlength="2"><label style="color:red;" id="surname"></label>
-        </div>
-        <div class="form-group">
-            <input type="text" name="email" class="form-control" placeholder="example@gmail.com *" required><label style="color:red;" id="email"></label>
-        </div>
-        <div class="form-group">
-            <input type="text" name="birthday" class="form-control" placeholder="DD.MM.YYYY">
-        </div>
-        <div class="form-group">
-        <span>Gender: </span>
-            <input type="radio" name="gender" value="Female"/>Female
-            <input type="radio" name="gender" value="Male"/>Male
-        </div>
-        <button type="submit" class="btn btn-primary">Registration</button>
-        <a href='/login' class="btn btn-primary">Login</a>
-        </form>
-        </div>
-        <div class="col-sm">
-        </div>
+<?php
+if (isset($_POST['result'])){
+    if($_POST['result']){
+        $smsg = "You are registered!";
+    }
+    else{
+        $emsg = "Something went wrong!";
+    }
+
+}
+?>
+    
+<div class="container">
+<div class="row">
+    <div class="col-sm">
     </div>
+    <div class="col-sm-5">
+    <h2>Form registration</h2>
+    <?php if(isset($smsg)){ ?><div class="alert alert-success" role="alert"><?php echo $smsg; ?></div><?php } ?>
+    <?php if(isset($emsg)){ ?><div class="alert alert-danger" role="alert"><?php echo $emsg; ?></div><?php } ?>
+    <form name="form" method="POST" onsubmit="return validateForm()">
+    <div class="form-group">
+        <input type="text" name="name" class="form-control" placeholder="Name *" required minlength="2"><label style="color:red;" id="name"></label>
     </div>
+    <div class="form-group">
+        <input type="text" name="surname" class="form-control" placeholder="Surname *" required minlength="2"><label style="color:red;" id="surname"></label>
+    </div>
+    <div class="form-group">
+        <input type="text" name="email" class="form-control" placeholder="example@gmail.com *" required><label style="color:red;" id="email"></label>
+    </div>
+    <div class="form-group">
+        <input type="text" name="birthday" class="form-control" placeholder="DD.MM.YYYY">
+    </div>
+    <div class="form-group">
+    Gender:
+        <input type="radio" name="gender" value="Female"/>Female
+        <input type="radio" name="gender" value="Male"/>Male
+    </div>
+    <button type="submit" class="btn btn-primary">Registration</button>
+    <button type="reset" class="btn btn-primary">Reset</button>
+    <a href='/login' class="btn btn-primary">Log in</a>
+    </form>
+    </div>
+    <div class="col-sm">
+    </div>
+</div>
+</div>
 
 </body>
 </html>

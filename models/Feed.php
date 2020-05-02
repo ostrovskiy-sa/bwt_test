@@ -6,6 +6,7 @@ class Feed
 
     public static function addComment(){
         $name = $email = $comment = $norobot = '';
+        session_start();
         
         if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['comment'])) {
             
@@ -28,19 +29,14 @@ class Feed
             else{
                 return false;
             }
-            // if (isset($_POST['norobot'])){
-            //     $norobot = $_POST['norobot'];
-            //         if($norobot == 'No'){
-            //             return true;
-            //         }
-            //         else{
-            //             return false;
-            //         }
-            // }
+            $_SESSION['addcomment'] = false;
             $mysqli = Db::getConnect();
             $sql = "INSERT INTO feedback (first_name, email, comment) VALUE ('$name', '$email', '$comment');";
             $result = $mysqli->query($sql);
             $mysqli->close();
+            if($result){
+                $_SESSION['addcomment'] = true;
+            }
         }
            
     }

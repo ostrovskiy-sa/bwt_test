@@ -34,9 +34,20 @@ class User
             }
 
             $mysqli = Db::getConnect();
+            $sql = "SELECT * FROM users WHERE email='$email'";
+            $result = mysqli_query($mysqli, $sql) or die(mysqli_error($conn));
+            $count = mysqli_num_rows($result);
+
+            if($count != 0){
+                $_POST['result'] = false;
+                return false;
+            }else{
+                $_POST['result'] = true;
+            }
             $sql = "INSERT INTO users (first_name, last_name, email, gender, date_of_birth) VALUES ('$name', '$surname', '$email', '$gender', '$birthday')";
             $result = $mysqli->query($sql);
             $mysqli->close();
+            
         }
            
     }
@@ -53,7 +64,6 @@ class User
             $count = mysqli_num_rows($result);
 
             if($count == 1){
-                $_SESSION['username'] = $name;
                 $_SESSION['login'] = true;
             }
 

@@ -62,7 +62,7 @@
     <div class="form-group">
         <input type="text" name="email" class="form-control" placeholder="example@gmail.com *" required><label style="color:red;" id="email"></label>
     </div>
-    <button type="submit" class="btn btn-primary">Login</button>
+    <button type="submit" class="btn btn-primary">Log in</button>
     <a href="/" class="btn btn-primary">Registration</a>
     </form>
     </div>
