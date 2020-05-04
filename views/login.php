@@ -36,7 +36,7 @@
             }
 
         function isName(name){
-            var nameReg = /^[a-zA-Z]+$/;
+            var nameReg = /^[a-zA-Z ]+$/;
             return nameReg.test(name);
         }
         function isEmail(email){
@@ -49,12 +49,13 @@
 </script>
 
 
-<h2 align="center">Login</h2>
+
 <div class="container">
 <div class="row">
     <div class="col-sm">
     </div>
     <div class="col-sm-5">
+    <h2>Login</h2>
     <form name="form" method="POST" onsubmit="return validateForm()">
     <div class="form-group">
         <input type="text" name="name" class="form-control" placeholder="Name *" required minlength="2"><label style="color:red;" id="name"></label>

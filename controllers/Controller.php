@@ -34,7 +34,7 @@ class Controller
     public function actionLogin(){
         require_once (ROOT.'/views/login.php');
         User::loginUser();
-        if($_SESSION['login']== true){
+        if(isset($_SESSION['login'])){
             header('Location: /weather');
         }
         return true;

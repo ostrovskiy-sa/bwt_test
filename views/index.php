@@ -46,19 +46,17 @@
             }
 
         function isName(name){
-            var nameReg = /^[a-zA-Z-]+$/;
+            var nameReg = /^[a-zA-Z ]+$/;
             return nameReg.test(name);
         }
         function isSurname(surname){
-            var surnameReg = /^[a-zA-Z]+$/;
+            var surnameReg = /^[a-zA-Z ]+$/;
             return surnameReg.test(surname);
         }
         function isEmail(email){
             var emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             return emailReg.test(email);
         }
-
-
     }
 </script>
 <?php
@@ -69,7 +67,6 @@ if (isset($_POST['result'])){
     else{
         $emsg = "Something went wrong!";
     }
-
 }
 ?>
     
@@ -79,8 +76,10 @@ if (isset($_POST['result'])){
     </div>
     <div class="col-sm-5">
     <h2>Form registration</h2>
+   
     <?php if(isset($smsg)){ ?><div class="alert alert-success" role="alert"><?php echo $smsg; ?></div><?php } ?>
     <?php if(isset($emsg)){ ?><div class="alert alert-danger" role="alert"><?php echo $emsg; ?></div><?php } ?>
+   
     <form name="form" method="POST" onsubmit="return validateForm()">
     <div class="form-group">
         <input type="text" name="name" class="form-control" placeholder="Name *" required minlength="2"><label style="color:red;" id="name"></label>

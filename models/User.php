@@ -2,7 +2,7 @@
 
 class User
 {
-
+    
     public static function addUser(){
         $name = $surname = $email = $gender = $birthday = '';
         
@@ -54,7 +54,6 @@ class User
 
     public static function loginUser(){
         session_start();
-        $_SESSION['login'] = false;
         $conn = Db::getConnect();
         if(isset($_POST['name']) && isset($_POST['email'])){
             $name = $_POST['name'];
@@ -64,7 +63,7 @@ class User
             $count = mysqli_num_rows($result);
 
             if($count == 1){
-                $_SESSION['login'] = true;
+                $_SESSION['login'] = 1;
             }
 
         }

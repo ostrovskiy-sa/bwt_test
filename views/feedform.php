@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -30,22 +31,24 @@
         }
         checkEmail = isEmail(email);
         if(checkEmail == false){
-            lblemail.innerHTML = "bad format!";
+            lblemail.innerHTML = "Bad format!";
             return false;
         }
         else{
             lblemail.innerHTML = "";
         }
-        if(norobot != "BWT"){
-            lblnorobot.innerHTML = "Print: BWT";
+        
+        if(norobot != 'BWT'){
+            lblnorobot.innerHTML = "Try again!";
             return false;
         }
         else{
-            lblnorobot.innerHTML = "Print: BWT";
+            lblemail.innerHTML = "";
         }
+        
 
         function isName(name){
-            var nameReg = /^[a-zA-Z]+$/;
+            var nameReg = /^[a-zA-Z ]+$/;
             return nameReg.test(name);
         }
         function isEmail(email){
@@ -61,6 +64,7 @@
 if (isset($_SESSION['addcomment'])){
     if($_SESSION['addcomment']){
         $smsg = "You've added comment!";
+        $_SESSION['addcomment']=false;
     }
 }
 ?>
@@ -82,18 +86,20 @@ if (isset($_SESSION['addcomment'])){
     <div class="form-group">
         <input type="text" name="comment" class="form-control" placeholder="Your comment *" required minlength="10"><label style="color:red;" id="email"></label>
     </div>
-    <div class="form-group">
-        <input type="text" name="norobot" class="form-control" placeholder="Print: BWT" required minlength="3"><label style="color:red;" id="norobot"></label>
+    <div>
+        <input type="text" name="norobot" class="form-control" placeholder="Please type: BWT" required><label style="color:red;" id="norobot"></label>
     </div>
     <button type="submit" class="btn btn-primary">Add comment</button>
     <button type="reset" class="btn btn-primary">Reset</button>
-    <a href="/feedback" class="btn btn-primary">See all comments</a>
+    <a href="/feedback" class="btn btn-primary">All comments</a>
+    <a href="/weather" class="btn btn-primary">Get Weather</a>
     </form>
     </div>
     <div class="col-sm">
     </div>
 </div>
 </div>
+
 
 </body>
 </html>

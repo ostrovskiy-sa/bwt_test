@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (empty($_SESSION['login'])){
+  header('Location: /login');
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -19,7 +25,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="/logout">Log out <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/logout">Log out </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/feedbackform">Add comment</a>
@@ -33,23 +39,16 @@
 </nav>
     
 <?php
-
 require 'vendor/autoload.php';
  
 use GuzzleHttp\Client;
  
-
 $client = new Client([
         'headers' => ['User-Agent' => 'MyReader']
      ]);
 $response = $client->request('GET', 'http://www.gismeteo.ua/city/daily/5093/');
 echo $response->getBody();
 
-
 ?>
-    
-
-        
-
 </body>
 </html>

@@ -29,6 +29,7 @@ class Feed
             else{
                 return false;
             }
+            
             $_SESSION['addcomment'] = false;
             $mysqli = Db::getConnect();
             $sql = "INSERT INTO feedback (first_name, email, comment) VALUE ('$name', '$email', '$comment');";
@@ -55,6 +56,7 @@ class Feed
             $i++;
         }
         $mysqli->close();
+        $commentsList = array_reverse($commentsList);
         return $commentsList;
     }
 }
