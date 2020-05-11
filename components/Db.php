@@ -1,5 +1,6 @@
 <?php
 
+namespace components;
 
 class Db
 {
@@ -10,7 +11,7 @@ class Db
         $user = 'serge';
         $pass = 'pass777';
 
-        $mysqli = new mysqli($host, $user, $pass, $dbname);
+        $mysqli = new \mysqli($host, $user, $pass, $dbname);
         return $mysqli;
     }
 }

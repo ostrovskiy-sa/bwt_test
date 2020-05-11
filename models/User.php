@@ -1,5 +1,9 @@
 <?php
 
+namespace models;
+
+use components\Db;
+
 class User
 {
     

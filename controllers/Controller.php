@@ -1,12 +1,12 @@
 <?php
-include ROOT.'/models/Feed.php';
-include ROOT.'/models/User.php';
 
+namespace controllers;
+
+use models\Feed;
+use models\User;
 
 class Controller
 {
-
-
     public function actionRegistration(){
         User::addUser();
         require_once (ROOT.'/views/index.php');

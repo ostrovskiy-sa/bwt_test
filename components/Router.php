@@ -1,6 +1,8 @@
 <?php
 
-include_once ROOT.'/controllers/Controller.php';
+namespace components;
+
+use controllers\Controller;
 
 class Router
 {
