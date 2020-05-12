@@ -60,8 +60,8 @@
     }
 </script>
 <?php
-if (isset($_POST['result'])){
-    if($_POST['result']){
+if (isset($_SESSION['result'])){
+    if($_SESSION['result']){
         $smsg = "You are registered!";
     }
     else{

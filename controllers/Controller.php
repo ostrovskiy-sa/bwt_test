@@ -15,6 +15,7 @@ class Controller
 
     public function actionWeather(){
         require_once (ROOT.'/views/weather.php');
+        return true;
     }
 
     public function actionAddFeedback(){
