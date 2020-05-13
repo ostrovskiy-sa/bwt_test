@@ -1,11 +1,10 @@
 <?php
 
 return array(
-    '' => 'Registration',
-    'weather' => 'Weather',
-    'addcomment' => 'AddComment',
-    'comments' => 'Comments',
-    'login' => 'Login',
-    'logout' => 'Logout',
-    
+    '' => 'user/registration',
+    'weather' => 'user/weather',
+    'addcomment' => 'feed/addComment',
+    'comments' => 'feed/comments',
+    'login' => 'user/login',
+    'logout' => 'user/logout',
 );

@@ -2,6 +2,8 @@
 
 namespace core;
 
+use core\Controller;
+
 class Controller
 {
     public $model;

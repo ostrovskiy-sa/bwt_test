@@ -2,7 +2,8 @@
 
 namespace components;
 
-use controllers\Controller;
+use controllers\UserController;
+use controllers\FeedController;
 
 class Router
 {
@@ -27,9 +28,15 @@ class Router
         $pageFound = false;
         foreach ($this->routes as $uriPattern => $path) {
             if (preg_match("~^$uriPattern$~", $url)) {
-                $actionName = 'action'.$path;
-                $controllerObject = new Controller();
-                $controllerObject->$actionName();
+                $segments = explode('/', $path);
+                $controllerName = ucfirst(array_shift($segments)) . 'Controller';
+                $actionName = 'action' . ucfirst(array_shift($segments));
+                if ($controllerName == 'UserController') {
+                    $controller = new UserController();
+                } else {
+                    $controller = new FeedController();
+                }
+                $controller->$actionName();
                 $pageFound = true;
             }
         }

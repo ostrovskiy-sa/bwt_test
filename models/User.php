@@ -7,7 +7,8 @@ use components\Db;
 class User
 {
     
-    public static function addUser(){
+    public static function addUser()
+    {
         $gender = '';
         $birthday = '';
         
@@ -57,7 +58,8 @@ class User
         }
     }
 
-    public static function loginUser(){
+    public static function loginUser()
+    {
         session_start();
         $pdo = Db::getConn();
         if(isset($_POST['name']) && isset($_POST['email'])) {
@@ -75,5 +77,14 @@ class User
             }
 
         }
+    }
+
+    public static function logoutUser()
+    {
+        session_start();
+        unset($_SESSION['login']);
+        session_destroy();
+        header('Location: /login');
+        exit;
     }
 }

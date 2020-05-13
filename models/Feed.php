@@ -10,7 +10,6 @@ class Feed
         session_start();
         
         if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['comment'])) {
-            
             $reg = "/^[a-zA-Z ]+$/";
             if (strlen($_POST['name'])>=2 && preg_match($reg, $_POST['name'])) {
                 $name = $_POST['name'];
