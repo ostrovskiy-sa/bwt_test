@@ -28,10 +28,10 @@ if (empty($_SESSION['login'])){
         <a class="nav-link" href="/logout">Log out </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/feedbackform">Add comment</a>
+        <a class="nav-link" href="/addcomment">Add comment</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/feedback">All comments</a>
+        <a class="nav-link" href="/comments">All comments</a>
       </li>
       
     </ul>
@@ -39,7 +39,7 @@ if (empty($_SESSION['login'])){
 </nav>
     
 <?php
-require 'vendor/autoload.php';
+// require 'vendor/autoload.php';
  
 use GuzzleHttp\Client;
  

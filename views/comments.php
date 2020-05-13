@@ -28,7 +28,7 @@ if (empty($_SESSION['login'])){
         <a class="nav-link" href="/logout">Log out </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/feedbackform">Add comment</a>
+        <a class="nav-link" href="/addcomment">Add comment</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/weather">Get weather</a>
@@ -37,7 +37,6 @@ if (empty($_SESSION['login'])){
     </ul>
   </div>
 </nav>
-
 <div class="container">
 <div class="row">
     <div class="col-sm">
@@ -47,13 +46,11 @@ if (empty($_SESSION['login'])){
     <?php foreach ($commentsList as $comment):?>
         <p><?php echo $comment['name'] ?></p>
         <p><?php echo $comment['comment'] ?></p>
-
     <?php endforeach ?>
     </div>
     <div class="col-sm">
     </div>
 </div>
 </div>
-
 </body>
 </html>

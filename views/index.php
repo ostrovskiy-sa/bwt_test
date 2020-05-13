@@ -60,8 +60,8 @@
     }
 </script>
 <?php
-if (isset($_POST['result'])){
-    if($_POST['result']){
+if (isset($_SESSION['result'])){
+    if($_SESSION['result']){
         $smsg = "You are registered!";
     }
     else{
@@ -69,7 +69,6 @@ if (isset($_POST['result'])){
     }
 }
 ?>
-    
 <div class="container">
 <div class="row">
     <div class="col-sm">
@@ -107,6 +106,5 @@ if (isset($_POST['result'])){
     </div>
 </div>
 </div>
-
 </body>
 </html>

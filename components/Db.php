@@ -1,16 +1,23 @@
 <?php
 
+namespace components;
 
 class Db
 {
+    private static $instance;
 
-    public static function getConnect(){
-        $host = 'localhost';
-        $dbname = 'db';
-        $user = 'serge';
-        $pass = 'pass777';
+    private function __construct() {}
+    private function __clone () {}
+	private function __wakeup () {}
 
-        $mysqli = new mysqli($host, $user, $pass, $dbname);
-        return $mysqli;
+	public static function getConn() {
+        if (!isset(self::$instance)) {
+            try {
+                self::$instance = new \PDO('mysql:host=localhost;dbname=db', 'serge', 'pass777');
+            } catch (PDOException $e) {
+                $e->getMessage();
+            }
+        } 
+        return self::$instance;
     }
 }
