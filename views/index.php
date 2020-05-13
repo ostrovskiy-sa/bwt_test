@@ -69,7 +69,6 @@ if (isset($_SESSION['result'])){
     }
 }
 ?>
-    
 <div class="container">
 <div class="row">
     <div class="col-sm">
@@ -107,6 +106,5 @@ if (isset($_SESSION['result'])){
     </div>
 </div>
 </div>
-
 </body>
 </html>

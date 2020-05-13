@@ -18,13 +18,13 @@ class Controller
         return true;
     }
 
-    public function actionAddFeedback(){
+    public function actionAddComment(){
         Feed::addComment();
-        require_once (ROOT.'/views/feedform.php');
+        require_once (ROOT.'/views/addcomment.php');
         return true;
     }
 
-    public function actionShowFeedbacks(){
+    public function actionComments(){
         $commentsList = array();
         $commentsList = Feed::commentsList();
         require_once (ROOT.'/views/comments.php');

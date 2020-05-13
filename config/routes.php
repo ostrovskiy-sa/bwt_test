@@ -3,8 +3,8 @@
 return array(
     '' => 'Registration',
     'weather' => 'Weather',
-    'feedbackform' => 'AddFeedback',
-    'feedback' => 'ShowFeedbacks',
+    'addcomment' => 'AddComment',
+    'comments' => 'Comments',
     'login' => 'Login',
     'logout' => 'Logout',
     

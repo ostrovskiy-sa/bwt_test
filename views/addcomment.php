@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -46,7 +45,6 @@
             lblemail.innerHTML = "";
         }
         
-
         function isName(name){
             var nameReg = /^[a-zA-Z ]+$/;
             return nameReg.test(name);
@@ -55,9 +53,6 @@
             var emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             return emailReg.test(email);
         }
-        
-
-
     }
 </script>
 <?php
@@ -68,7 +63,6 @@ if (isset($_SESSION['addcomment'])){
     }
 }
 ?>
-
 <div class="container">
 <div class="row">
     <div class="col-sm">
@@ -91,7 +85,7 @@ if (isset($_SESSION['addcomment'])){
     </div>
     <button type="submit" class="btn btn-primary">Add comment</button>
     <button type="reset" class="btn btn-primary">Reset</button>
-    <a href="/feedback" class="btn btn-primary">All comments</a>
+    <a href="/comments" class="btn btn-primary">All comments</a>
     <a href="/weather" class="btn btn-primary">Get Weather</a>
     </form>
     </div>
@@ -99,7 +93,5 @@ if (isset($_SESSION['addcomment'])){
     </div>
 </div>
 </div>
-
-
 </body>
 </html>
