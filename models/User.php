@@ -6,30 +6,26 @@ use components\Db;
 
 class User
 {
-    
-    public static function addUser()
+    public function addItem()
     {
         $gender = '';
         $birthday = '';
         
         if (isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['email'])) {
-            $reg = "/^[a-zA-Z]+$/";
-            if (strlen($_POST['name'])>=2 && preg_match($reg, $_POST['name'])) {
+            $reg = "~^[a-zA-Z ]+$~";
+            if (strlen($_POST['name']) >= 2 && preg_match($reg, $_POST['name'])) {
                 $name = $_POST['name'];
-            }
-            else {
+            } else {
                 return false;
             }
-            if (strlen($_POST['surname'])>=2 && preg_match($reg, $_POST['surname'])) {
+            if (strlen($_POST['surname']) >= 2 && preg_match($reg, $_POST['surname'])) {
                 $surname = $_POST['surname'];
-            }
-            else {
+            } else {
                 return false;
             }
             if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
                 $email = $_POST['email'];
-            }
-            else{
+            } else{
                 return false;
             }
             if (isset($_POST['gender'])) {
@@ -58,11 +54,10 @@ class User
         }
     }
 
-    public static function loginUser()
+    public function loginUser()
     {
-        session_start();
         $pdo = Db::getConn();
-        if(isset($_POST['name']) && isset($_POST['email'])) {
+        if (isset($_POST['name']) && isset($_POST['email'])) {
             $name = $_POST['name'];
             $email = $_POST['email'];
             try {
@@ -75,13 +70,11 @@ class User
             if($user){
                 $_SESSION['login'] = 1;
             }
-
         }
     }
 
-    public static function logoutUser()
+    public function logoutUser()
     {
-        session_start();
         unset($_SESSION['login']);
         session_destroy();
         header('Location: /login');

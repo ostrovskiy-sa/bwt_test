@@ -4,5 +4,5 @@ namespace core;
 
 class Model
 {
-    public function addItem(){}
+    public function addItem() {}
 }

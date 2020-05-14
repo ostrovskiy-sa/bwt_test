@@ -36,26 +36,14 @@ class Router
                 } else {
                     $controller = new FeedController();
                 }
+                // вместо конструкции if хотел этот код использовать, но почему-то не срабатывает
+                // $controller = new $controllerName();
                 $controller->$actionName();
                 $pageFound = true;
             }
         }
-        if (!$pageFound){
-            echo "404 page not found";
-        }
-        
-        
-        
-        
-    
-        
-        
-        
-        
+        if (!$pageFound) {
+            echo "<h1>Error 404. Sory, page not found</h1>";
+        }        
     }
 } 
-
-
-
-
-

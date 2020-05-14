@@ -4,7 +4,7 @@ return array(
     '' => 'user/registration',
     'weather' => 'user/weather',
     'addcomment' => 'feed/addComment',
-    'comments' => 'feed/comments',
+    'comments' => 'feed/showComments',
     'login' => 'user/login',
     'logout' => 'user/logout',
 );

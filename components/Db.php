@@ -10,10 +10,15 @@ class Db
     private function __clone () {}
 	private function __wakeup () {}
 
-	public static function getConn() {
+    public static function getConn() 
+    {
         if (!isset(self::$instance)) {
             try {
-                self::$instance = new \PDO('mysql:host=localhost;dbname=db', 'serge', 'pass777');
+                self::$instance = new \PDO(
+                    'mysql:host=localhost;dbname=db', 
+                    'serge', 
+                    'pass777',
+                    [\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION]);
             } catch (PDOException $e) {
                 $e->getMessage();
             }
