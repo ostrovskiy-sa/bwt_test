@@ -36,23 +36,20 @@
 </script>
 
 <div class="container">
-<div class="row">
-    <div class="col-sm">
+    <div class="row">
+        <div class="block">
+        <h2>Login</h2>
+        <form name="form" method="POST" onsubmit="return validateForm()">
+            <div class="form-group">
+                <input type="text" name="name" class="form-control" placeholder="Name *" required minlength="2"><label style="color:red;" id="name"></label>
+            </div>
+            <div class="form-group">
+                <input type="text" name="email" class="form-control" placeholder="example@gmail.com *" required><label style="color:red;" id="email"></label>
+            </div>
+            <button type="submit" class="btn btn-primary">Log in</button>
+            <a href="/" class="btn btn-primary">Registration</a>
+            <a href='/addcomment' class="btn btn-primary">Add comment</a>
+        </form>
+        </div>
     </div>
-    <div class="col-sm-5">
-    <h2>Login</h2>
-    <form name="form" method="POST" onsubmit="return validateForm()">
-    <div class="form-group">
-        <input type="text" name="name" class="form-control" placeholder="Name *" required minlength="2"><label style="color:red;" id="name"></label>
-    </div>
-    <div class="form-group">
-        <input type="text" name="email" class="form-control" placeholder="example@gmail.com *" required><label style="color:red;" id="email"></label>
-    </div>
-    <button type="submit" class="btn btn-primary">Log in</button>
-    <a href="/" class="btn btn-primary">Registration</a>
-    </form>
-    </div>
-    <div class="col-sm">
-    </div>
-</div>
 </div>

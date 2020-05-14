@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>GetWeather</title>
-  </head>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<title>GetWeather</title>
+
+<style>
+div.block {
+  margin-left: auto;
+  margin-right: auto;
+  width: 39%;
+}
+</style>
+</head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/logout">Log out </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/addcomment">Add comment</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/comments">All comments</a>
-      </li>
-      
-    </ul>
-  </div>
-</nav>
-    <?php include ROOT.'/views/'.$content; ?>
+
+<?php include ROOT.'/views/'.$content; ?>
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+  <div class="footer-copyright text-center py-3">GetWeather © 2020 Copyright</div>
+</footer>
+<!-- Footer -->
 </body>
 </html>
