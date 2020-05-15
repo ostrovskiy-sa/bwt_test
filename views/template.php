@@ -22,10 +22,10 @@ div.block {
 <body>
 
 <?php include ROOT.'/views/'.$content; ?>
-<!-- Footer -->
+
 <footer class="page-footer font-small blue pt-4">
   <div class="footer-copyright text-center py-3">GetWeather © 2020 Copyright</div>
 </footer>
-<!-- Footer -->
+
 </body>
 </html>

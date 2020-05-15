@@ -23,4 +23,3 @@ $response = $client->request('GET', 'http://www.gismeteo.ua/city/daily/5093/');
 echo $response->getBody();
 
 ?>
-

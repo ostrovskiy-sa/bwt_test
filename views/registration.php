@@ -48,11 +48,11 @@
 </script>
 
 <?php
-if (isset($_SESSION['result'])) {
-    if ($_SESSION['result']) {
+if (isset($_SESSION['resultRegistration'])) {
+    if ($_SESSION['resultRegistration']) {
         header('Location: /login');
     } else {
-        $emsg = "Something went wrong!";
+        $emsg = "Something went wrong! Maybe email is already registered";
     }
 }
 ?>
@@ -62,7 +62,7 @@ if (isset($_SESSION['result'])) {
         <div class="block">
         <h2>Form registration</h2>
     
-        <?php if (isset($emsg)) { ?><div class="alert alert-danger" role="alert"><?php echo $emsg; ?></div><?php } ?>
+        <?php if (isset($emsg)) { ?><div class="alert alert-danger" role="alert" style="width:102%"><?php echo $emsg; ?></div><?php } ?>
     
         <form name="form" method="POST" onsubmit="return validateForm()">
             <div class="form-group">
