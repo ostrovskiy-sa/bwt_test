@@ -25,7 +25,7 @@ class User
             }
             if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
                 $email = $_POST['email'];
-            } else{
+            } else {
                 return false;
             }
             if (isset($_POST['gender'])) {
@@ -41,10 +41,10 @@ class User
                 $res = $pdo->query($sql);
                 $user = $res->fetch();
                 if ($user) {
-                    $_SESSION['result'] = false;
+                    $_SESSION['resultRegistration'] = false;
                     return false;
                 } else {
-                    $_SESSION['result'] = true;
+                    $_SESSION['resultRegistration'] = true;
                 }
                 $sql = "INSERT INTO users (first_name, last_name, email, gender, date_of_birth) VALUES ('$name', '$surname', '$email', '$gender', '$birthday')";
                 $pdo->exec($sql);

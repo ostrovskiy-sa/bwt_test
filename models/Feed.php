@@ -38,7 +38,6 @@ class Feed
                 $_SESSION['addcomment'] = true;
             }
         }
-           
     }
 
     public function commentsList()
